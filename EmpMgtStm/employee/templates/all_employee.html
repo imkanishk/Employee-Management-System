@@ -1,0 +1,49 @@
+{% extends 'admin_base.html' %}
+
+{% block main %}
+
+
+<style>
+    table, th, td {
+      border:1px solid black;
+    }
+</style>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.3.6/css/buttons.dataTables.min.css">
+<div class="card shadow m-2">
+    <div class="card-body">
+        <h5 class="p-2"> Employee Details</h5>
+
+        <div class="container-fluid">
+            <table class="table" id="example">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Serial No.</th>
+                        <th>Emp_Code</th>
+                        <th>Name</th>
+                        <th>Email ID</th>
+                        <th>Contact No.</th>
+                        <th>Joining Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in employee %}
+                        <tr>
+                            <td>{{forloop.counter}}</td>
+                            <td>{{i.empcode}}</td>
+                            <td><a href="/edit_profile/{{i.user.id}}">{{i.user.first_name }} {{i.user.last_name}}</a></td>
+                            <td>{{i.user.username}}</td>
+                            <td>{{i.contact}}</td>
+                            <td>{{i.doj}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

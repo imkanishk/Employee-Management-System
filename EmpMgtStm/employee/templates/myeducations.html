@@ -1,0 +1,66 @@
+{% extends 'emp_base.html' %}
+
+{% block main %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <div class="card-body">
+            <a href="/edit_myeducations" class="btn btn-primary float-right btn-sm">Edit My Educations</a>
+            <h5 class="p-2 text-danger" style="border-bottom: 2px solid orange">My Educations</h5>
+            <div class="container-fluid">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>Post Graduation</th>
+                        <td>{{education.pg}}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Year of Passing</th>
+                        <td>{{education.yop_pg}}</td>     
+                    </tr>
+
+                    <tr>
+                        <th>Graduation</th>
+                        <td>{{education.ug}}</td>     
+                    </tr>
+
+                    <tr>
+                        <th>Year of Passing</th>
+                        <td>{{education.yop_ug}}</td>    
+                    </tr>
+
+                    <tr>
+                        <th>Senior Secondary School Examination</th>
+                        <td>{{education.class_XII}}</td>     
+                    </tr>
+
+                    <tr>
+                        <th>Year of Passing</th>
+                        <td>{{education.yop_class_XII}}</td>     
+                    </tr>
+
+                    <tr>
+                        <th>Secondary School Examination</th>
+                        <td>{{education.class_X}}</td>     
+                    </tr>
+
+                    <tr>
+                        <th>Year of Passing</th>
+                        <td>{{education.yop_class_X}}</td>     
+                    </tr>
+                    
+                </table>
+            </div>
+    
+        </div>
+</body>
+</html>
+
+
+{% endblock %}

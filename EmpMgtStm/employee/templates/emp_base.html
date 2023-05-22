@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .list-group-item{
+            padding:8px !important;
+        }
+
+        .navbar-brand {
+            text-align: center;
+        }
+
+    </style>
+  <body>
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-2">
+            <center><img src="{% static 'images/employee.png' %}" width="100" height="100"></center>
+            <br>
+
+            <div class="list-group">
+                <a href="/emp_home" class="list-group-item list-group-item-warning list-group-item-action">Dash Board</a>
+                <a href="/profile" class="list-group-item list-group-item-warning list-group-item-action">Profile</a>
+                <a href="/myexperience" class="list-group-item list-group-item-warning list-group-item-action">My Experience</a>
+                <a href="/myeducations" class="list-group-item list-group-item-warning list-group-item-action">My Education</a>
+                <a href="/change_password" class="list-group-item list-group-item-warning list-group-item-action">Change Password</a>
+                <a href="/logout" class="list-group-item list-group-item-warning list-group-item-action">Logout</a> 
+            </div>
+        </div>
+        <div class="col-sm-10 p-0">
+            <div class="container-fluid p-1">
+                <h5 class="text-center p-3 font-weight-bond" style="border-bottom: 2px solid green ;border-top: 2px solid green">Employee Dasboard</h5>
+                <div class="card shadow" style="min-height: 85vh">
+                <div class="card-body">
+                    {% block main %}
+
+
+                        {% endblock %}
+
+                </div>
+                </div>
+    
+            </div>
+    
+          </div>
+    </div>
+</div>
+  </body>
+</html>

@@ -1,0 +1,92 @@
+{% include 'header.html' %}
+
+<style>
+    .btn-green {
+        background-color: #17B169;
+        color: white;
+    }
+
+    .bold-text {
+        font-weight: bold;
+    }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6">
+                    <img src="static/images/ems.jpg" width="800" height="600">
+            </div>
+
+            <div class="col-lg-5">
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="card shadow m-5" >
+                    <div class="card-body">
+                        <h5 class="p-2 text-danger" style="border-bottom: 2px solid skyblue">Employee Login</h5>
+                        <div class="container-fluid">
+                            <form method="post">
+                                {% csrf_token %}
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="fa fa-user"></i>
+                                        </span>
+                                    </div>
+                                    <input type="text" name="email" class="form-control" placeholder="Email ID">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="fa fa-lock"></i>
+                                        </span>
+                                    </div>
+                                    <input type="password" name="pwd" class="form-control" placeholder="Password">
+                                </div>
+                                <center>
+                                    <input type="submit" value="Login" class="btn btn-primary form-control mb-3 bold-text">
+                                </center>
+                            </form>
+                                <h5 class="p-2 text-danger" style="border-bottom: 2px solid skyblue"></h5>
+                                <form action="registration">
+                                    <center>
+                                        <h5>Don't have an account</h5>
+                                        <input type="submit" value="Employee Registration" class="btn-green form-control bold-text">
+                                    </center>
+                                </form>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    
+    
+
+    {% if error == "no" %}
+    <script>
+        alert('Logged In Successfully')
+        window.location.replace('/emp_home');
+    </script>
+    {% endif %}
+    {% if error == "yes" %}
+    <script>
+        alert('Invalid Login Credentials');
+    </script>
+    {% endif %}
+</body>
+</html>

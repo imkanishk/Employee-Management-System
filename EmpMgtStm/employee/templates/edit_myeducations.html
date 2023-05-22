@@ -1,0 +1,81 @@
+{% extends 'emp_base.html' %}
+
+{% block main %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <div class="card-body">
+            <a href="/myexperience" class="btn btn-primary float-right btn-sm">View My Educations</a>
+            <h5 class="p-2 text-danger" style="border-bottom: 2px solid orange">Edit My Educations</h5>
+            <div class="container-fluid">
+                <form method="POST">
+                    {% csrf_token %}
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>Post Graduation</th>
+                            <td><input type="text" name="pg" class="form-control" value="{{education.pg}}" size="15"></td>     
+                        </tr>
+                    
+                        <tr>
+                            <th>Year of Passing</th>
+                            <td><input type="text" name="yop_pg" class="form-control" value="{{education.yop_pg}}"></td>     
+                        </tr>
+                    
+                        <tr>
+                            <th>Graduation</th>
+                            <td><input type="text" name="ug" class="form-control" value="{{education.ug}}"></td>     
+                        </tr>
+                    
+                        <tr>
+                            <th>Year of Passing</th>
+                            <td><input type="text" name="yop_ug" class="form-control" value="{{education.yop_ug}}"></td>     
+                        </tr>
+                    
+                        <tr>
+                            <th>Senior Secondary School Examination</th>
+                            <td><input type="text" name="class_XII" class="form-control" value="{{education.class_XII}}"></td>     
+                        </tr>
+                    
+                        <tr>
+                            <th>Year of Passing</th>
+                            <td><input type="text" name="yop_class_XII" class="form-control" value="{{education.yop_class_XII}}"></td>     
+                        </tr>
+
+                        <tr>
+                            <th>Secondary School Examination</th>
+                            <td><input type="text" name="class_X" class="form-control" value="{{education.class_X}}"></td>     
+                        </tr>
+                    
+                        <tr>
+                            <th>Year of Passing</th>
+                            <td><input type="text" name="yop_class_X" class="form-control" value="{{education.yop_class_X}}"></td> 
+                        </tr>
+                
+                    </table>
+                <center><input type="submit" value="Update" class="btn btn-primary px-1"></center>
+                </form>
+            </div>
+    
+        </div>
+</body>
+</html>
+
+{% if error == "no" %}
+<script>
+    alert('Education Details Updated Successfully')
+    window.location.replace('/edit_myeducations ');
+</script>
+{% endif %}
+{% if error == "yes" %}
+<script>
+    alert('Something went wrong , Try Again.....');
+</script>
+{% endif %}
+
+{% endblock %}

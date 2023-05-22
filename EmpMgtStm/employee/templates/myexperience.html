@@ -1,0 +1,71 @@
+{% extends 'emp_base.html' %}
+
+{% block main %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <div class="card-body">
+            <a href="/edit_experience" class="btn btn-primary float-right btn-sm">Edit Work Experience</a>
+            <h5 class="p-2 text-danger" style="border-bottom: 2px solid orange">My Work Experience</h5>
+            <div class="container-fluid">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>First Company Name</th>
+                        <td>{{experience.company1_name}}</td>     
+                    </tr>
+
+                    <tr>
+                        <th>Job Designation</th>
+                        <td>{{experience.company1_desig}}</td>     
+                    </tr>
+
+                    <tr>
+                        <th>Duration</th>
+                        <td>{{experience.company1_duration}}</td>     
+                    </tr>
+
+                    <tr>
+                        <th>Second Company Name</th>
+                        <td>{{experience.company2_name}}</td>     
+                    </tr>
+
+                    <tr>
+                        <th>Job Designation</th>
+                        <td>{{experience.company2_desig}}</td>     
+                    </tr>
+
+                    <tr>
+                        <th>Duration</th>
+                        <td>{{experience.company2_duration}}</td>     
+                    </tr>
+
+                    <tr>
+                        <th>Third Company Name</th>
+                        <td>{{experience.company3_name}}</td>     
+                    </tr>
+
+                    <tr>
+                        <th>Job Designation</th>
+                        <td>{{experience.company3_desig}}</td>     
+                    </tr>
+
+                    <tr>
+                        <th>Duration</th>
+                        <td>{{experience.company3_duration}}</td>     
+                    </tr>
+
+                </table>
+            </div>
+    
+        </div>
+</body>
+</html>
+
+
+{% endblock %}

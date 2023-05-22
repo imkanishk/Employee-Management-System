@@ -1,0 +1,89 @@
+{% extends 'emp_base.html' %}
+
+{% block main %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <div class="card-body">
+            <a href="/myexperience" class="btn btn-primary float-right btn-sm">View My Work Experience</a>
+            <h5 class="p-2 text-danger" style="border-bottom: 2px solid orange">Edit Work Experience</h5>
+            <div class="container-fluid">
+                <form method="POST">
+                    {% csrf_token %}
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>First Company Name </th>
+                            <td><input type="text" name="company1_name" class="form-control" value="{{experience.company1_name}}" size="15"></td>     
+                        </tr>
+                    
+                        <tr>
+                            <th>Job Designation</th>
+                            <td><input type="text" name="company1_desig" class="form-control" value="{{experience.company1_desig}}"></td>     
+                        </tr>
+                    
+                        <tr>
+                            <th>Duration</th>
+                            <td><input type="text" name="company1_duration" class="form-control" value="{{experience.company1_duration}}"></td>     
+                        </tr>
+                    </table>
+                    
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>Second Company Name</th>
+                            <td><input type="text" name="company2_name" class="form-control" value="{{experience.company2_name}}"></td>     
+                        </tr>
+                    
+                        <tr>
+                            <th>Job Designation</th>
+                            <td><input type="text" name="company2_desig" class="form-control" value="{{experience.company2_desig}}"></td>     
+                        </tr>
+                    
+                        <tr>
+                            <th>Duration</th>
+                            <td><input type="text" name="company2_duration" class="form-control" value="{{experience.company2_duration}}"></td>     
+                        </tr>
+                    </table>
+
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>Third Company Name </th>
+                            <td><input type="text" name="company3_name" class="form-control" value="{{experience.company3_name}}"></td>     
+                        </tr>
+                    
+                        <tr>
+                            <th>Job Designation</th>
+                            <td><input type="text" name="company3_desig" class="form-control" value="{{experience.company3_desig}}"></td>     
+                        </tr>
+                    
+                        <tr>
+                            <th>Duration</th>
+                            <td><input type="text" name="company3_duration" class="form-control" value="{{experience.company3_duration}}"></td>     
+                        </tr>
+                    </table>
+                <center><input type="submit" value="Update" class="btn btn-primary px-1"></center>
+                </form>
+            </div>
+    
+        </div>
+</body>
+</html>
+
+{% if error == "no" %}
+<script>
+    alert('Experience Details Updated Successfully')
+    window.location.replace('/edit_experience');
+</script>
+{% endif %}
+{% if error == "yes" %}
+<script>
+    alert('Something went wrong , Try Again.....');
+</script>
+{% endif %}
+
+{% endblock %}
